@@ -1,4 +1,7 @@
+import 'dart:collection';
 import 'dart:ffi';
+
+enum names { Ahamed, Ali, Sam, hassan }
 
 void main(List<String> args) {
   int x = 89;
@@ -8,8 +11,20 @@ void main(List<String> args) {
 
   var city = "Yem";
   var age = 26;
+  var num1 = num.parse("3");
+  var num2 = num.parse("9.3");
 
+  var resultadded = num1 + num2;
+  print("result added = ${resultadded}");
   dynamic Quelf = "En";
+  String desc = "name" 'is' "Wagdi";
+  print("result desc ________________________________ ${desc}");
+  String string = 'I do coding';
+  String string1 = '$string on My project';
+  print(string1);
+
+  String rs = r'This is a raw string';
+  print(rs);
 //CharThe [Char] type is a native type, and should not be constructed in Dart code.
 // It occurs only in native type signatures and as annotation on [Struct] and [Union] fields.
   int Start = 'A'.codeUnitAt(0);
@@ -141,4 +156,32 @@ void main(List<String> args) {
   Set<String> allGroup = group1.union(group2);
 
   print(allGroup);
+
+  // Creating a Queue
+  Queue<String> queue = new Queue<String>();
+  queue.add('1');
+  queue.add('2');
+  queue.add('3');
+
+  print("This is Queue Strucure     $queue ");
+
+  //enum
+  for (names name in names.values) {
+    print(name);
+  }
+  final nam1 = names.Ahamed;
+  switch (nam1) {
+    case names.Ahamed:
+      print("This is  the correct case.");
+      break;
+    case names.Ali:
+      print("This is not the correct case.");
+      break;
+    case names.Sam:
+      print("This is the correct case.");
+      break;
+    case names.hassan:
+      print("This is not the correct case.");
+      break;
+  }
 }
