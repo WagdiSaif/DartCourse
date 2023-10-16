@@ -1,0 +1,5 @@
+Dart is an open-source general-purpose programming language
+ developed by Google. It supports application development in both 
+client and server-side. But it is widely used for the development of 
+android apps, iOS apps, IoT(Internet of Things), and web applications
+ using the Flutter Framework.

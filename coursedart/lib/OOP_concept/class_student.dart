@@ -1,8 +1,16 @@
-// Dart Program in Dart to illustrate
-// getters and setters #GFG
+// getters and setters
 class Student {
   late String name;
   late int age;
+
+  late int id;
+  void set setId(int id) {
+    this.id = id;
+  }
+
+  int get getId {
+    return id;
+  }
 
   String get getStud_name {
     return name;
@@ -13,11 +21,7 @@ class Student {
   }
 
   void set setStud_age(int age) {
-    if (age <= 0) {
-      print("Age should be greater than 5");
-    } else {
-      this.age = age;
-    }
+    this.age = age;
   }
 
   int get getStud_age {
@@ -29,6 +33,8 @@ void main() {
   Student student = Student();
   student.setStud_name = 'Wagdi';
   student.setStud_age = 25;
-  print(student.getStud_age);
-  print(student.getStud_name);
+  student.setId = 2345;
+  print("The student age is  ${student.getStud_age}");
+  print("The student name is ${student.getStud_name}");
+  print("The student id is ${student.getId}");
 }
