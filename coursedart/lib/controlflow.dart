@@ -11,7 +11,7 @@ void main() {
   else
     print("The user input is Odd number is $number");
 
-  //********************* *********************************************************/
+  //********************* ****************if ,else if ,else*****************************************/
   print('plz input the numbers x,y,z : ');
   int x = int.parse(stdin.readLineSync()!);
   int y = int.parse(stdin.readLineSync()!);

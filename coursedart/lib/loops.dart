@@ -6,7 +6,7 @@ while loop
 do-while loop*/
 
   for (int i = 0; i < 5; i++) {
-    print('*\t');
+    print('*');
   }
 
   for (int i = 0; i <= 5; i++) {

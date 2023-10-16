@@ -26,7 +26,7 @@ void main(List<String> args) {
   String rs = r'This is a raw string';
   print(rs);
 //CharThe [Char] type is a native type, and should not be constructed in Dart code.
-// It occurs only in native type signatures and as annotation on [Struct] and [Union] fields.
+
   int Start = 'A'.codeUnitAt(0);
   int end = 'Z'.codeUnitAt(0);
 
