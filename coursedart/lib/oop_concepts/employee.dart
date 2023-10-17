@@ -1,6 +1,4 @@
-import 'dart:ffi';
-
-import 'package:coursedart/OOP_concept/person.dart';
+import 'package:coursedart/oop_concepts/person.dart';
 
 class Employee extends Person {
   final String emp_dept;
