@@ -1,13 +1,13 @@
 import 'dart:ffi';
 // import 'package:ffi/ffi.dart';
 
-// class Person extends Struct {
-//   @Int32()
-//   external int age;
+class Person extends Struct {
+  @Int32()
+  external int age;
 
-//   @Int32()
-//   external int height;
-// }
+  @Int32()
+  external int height;
+}
 
 typedef CreatePersonFunc = Int32 Function(Int32, Int32);
 typedef CreatePerson = int Function(int, int);

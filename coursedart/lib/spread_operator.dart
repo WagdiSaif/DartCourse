@@ -2,7 +2,9 @@
 
 
 void main(List<String> args) {
-//spread operator with List
+
+
+  // Free the memory if you manually allocate it
 
   List<String> animalsList1 = ['Dog', 'Cat', 'Lion', 'Tiger'];
   List<String> animalsMain = ['Wolf', 'Panda', ...animalsList1];
@@ -25,10 +27,8 @@ void main(List<String> args) {
   print('The person Info  are :    $personalData');
 
   //spread operator with Set
-  Set<String> lang = {'Ar', 'En','Fr'};
-  Set<String> langBase = {'es','de',...lang};
+  Set<String> lang = {'Ar', 'En', 'Fr'};
+  Set<String> langBase = {'es', 'de', ...lang};
 
   print('The set langBase  are :    $langBase');
 }
-
-
