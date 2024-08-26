@@ -1,20 +1,22 @@
 import 'dart:ffi';
+// import 'package:ffi/ffi.dart';
 
-class Person extends Struct {
-  @Int32()
-  external int age;
+// class Person extends Struct {
+//   @Int32()
+//   external int age;
 
-  @Int32()
-  external int height;
-}
+//   @Int32()
+//   external int height;
+// }
 
-typedef CreatePersonFunc = Pointer<Person> Function(Int32, Int32);
-typedef CreatePerson = Pointer<Person> Function(int, int);
+typedef CreatePersonFunc = Int32 Function(Int32, Int32);
+typedef CreatePerson = int Function(int, int);
 
 void main() {
-  final dylib = DynamicLibrary.open('path/to/native/library');
-  final createPersonFunc =
-      dylib.lookupFunction<CreatePersonFunc, CreatePerson>('create_person');
-  final person = createPersonFunc(25, 180).ref;
-  print('Age: ${person.age}, Height: ${person.height}');
+  final dylib = DynamicLibrary.open("coursedart/native_c_code/program.dll");
+  final sumNumv =
+      dylib.lookupFunction<CreatePersonFunc, CreatePerson>('sumNum');
+  final person = sumNumv(20, 10);
+  print(person);
+  // print('Age: ${person.age}, Height: ${person.height}');
 }
