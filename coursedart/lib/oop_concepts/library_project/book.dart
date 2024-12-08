@@ -1,3 +1,4 @@
+// ignore: file_names
 abstract class Book {
   int bookId;
   String title;
@@ -6,6 +7,11 @@ abstract class Book {
 
   Book(this.bookId, this.title, this.author, this.price);
 
-  void showBookDetails();
+ 
+  void showBookDetails() {
+    print(
+        " Book title: $title by $author, title: $title, author: $author, Price: $price");
+  
+  }
   void applyDiscount(double discountPercentage);
 }

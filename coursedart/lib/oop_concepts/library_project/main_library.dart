@@ -1,27 +1,38 @@
-import 'package:coursedart/oop_concepts/library_project/ebooks.dart';
 
-import 'Book.dart';
+
 import 'categories.dart';
+import 'customer.dart';
+import 'ebooks.dart';
 import 'order.dart';
 import 'printed_book.dart';
 import 'shipping_details.dart';
 import 'store.dart';
 
-
 void main(List<String> args) {
   // Create Books
- Book printedBook = PrintedBook(1, "The Dart Programming Language", "Author A",29.99, "Publisher X", 300, 50);
+  var printedBook = PrintedBook(1, "The Dart Programming Language", "Author A",
+      29.99, "Publisher X", 300, 50);
 
- Book ebook = EBook(2, "Learning Flutter", "Author B", 19.99, "PDF", 5.0);
+  printedBook.showBookDetails();
+  printedBook.applyDiscount(50); // Apply 50% discount
+  var ebook = EBook(2, "Learning Flutter", "Author B", 19.99, "PDF", 5.0);
 
-  // Apply discount to books
-  printedBook.applyDiscount(10); // Apply 10% discount
-  printedBook.applyDiscount(15); // Apply 15% discount
+  ebook.showBookDetails();
+
+  ebook.applyDiscount(15); // Apply 15% discount
 
   // Create an Order
-  Order order = Order(1001, "Library Order", DateTime.now());
-  order.addBookToOrder(printedBook);
-  order.addBookToOrder(ebook);
+  Order order = Order(1001, "Book 1", DateTime.now());
+  Customer customer = Customer(
+    customerId: 1,
+    name: "Mohammed Ali",
+    email: "MohammedALi@example.com",
+    phoneNumber: "123-456-7890",
+    address: "123 6th Street",
+  );
+  order.addOrderDetails(printedBook, customer);
+  order.addOrderDetails(ebook, customer);
+
 
   // Show Order Details
   order.showOrderDetails();
@@ -35,13 +46,12 @@ void main(List<String> args) {
   Store store = Store("E-books");
   store.addBook(ebook);
   store.showCategoryBooks();
+      printedBook.makeUpdateStock(4);
 
-  // // Update inventory for printed book
-  // printedBook.updateStock(5); // Sell 5 books
-  // printedBook.updateStock(60); // Attempt to sell more than available stock
-
+  // // Update     printedBook.makeUpdateStock(4);ipnventory for printed book(5); // Sell 5 books
+ 
   // Shipping details for order
-  ShippingDetails shipping = ShippingDetails(
-      1001, "Library Order", DateTime.now(), "123 Main St, City", 5.0);
+  var shipping = ShippingDetails(
+      1001, "Library Order", DateTime.now(), "123 Main St, City", 5.89);
   shipping.showOrderDetails();
 }
