@@ -6,7 +6,7 @@ dynamic dispalyMessage() async {
 
 Future message(int deuration, String msg) {
   var del = Future.delayed(Duration(seconds: deuration), ((dispalyMessage())))
-      .then((value) => print("Duration finsh ${value}"));
+      .then((value) => print("Duration finsh $value"));
 
   return del;
 }

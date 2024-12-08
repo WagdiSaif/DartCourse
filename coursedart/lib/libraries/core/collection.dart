@@ -18,9 +18,9 @@ UnmodifiableMapView is a wrapper, an unmodifiable Map view of another Map.
 
   fruit["Mango"] = 4;
   fruit.addAll({"Anans": 5});
-  final Newfruit = {"Berray": 6, 'So': 7};
+  final newFruit = {"Berray": 6, 'So': 7};
 
-  fruit.addEntries(Newfruit.entries);
+  fruit.addEntries(newFruit.entries);
 
   print(fruit);
 

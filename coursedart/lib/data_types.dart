@@ -1,7 +1,6 @@
 import 'dart:collection';
-import 'dart:ffi';
 
-enum names { Ahamed, Ali, Sam, hassan }
+enum Names { ahamed, ali, sam, hassan }
 
 void main(List<String> args) {
   int x = 89;
@@ -15,10 +14,10 @@ void main(List<String> args) {
   var num2 = num.parse("9.3");
 
   var resultadded = num1 + num2;
-  print("result added = ${resultadded}");
-  dynamic Quelf = "En";
+  print("result added = $resultadded");
+  dynamic quelf = "En";
   String desc = "name" 'is' "Wagdi";
-  print("result desc ________________________________ ${desc}");
+  print("result desc ________________________________ $desc");
   String string = 'I do coding';
   String string1 = '$string on My project';
   print(string1);
@@ -27,17 +26,17 @@ void main(List<String> args) {
   print(rs);
 //CharThe [Char] type is a native type, and should not be constructed in Dart code.
 
-  int Start = 'A'.codeUnitAt(0);
+  int start = 'A'.codeUnitAt(0);
   int end = 'Z'.codeUnitAt(0);
 
-  while (Start <= end) {
-    print(String.fromCharCode(Start) + "\t");
-    Start++;
+  while (start <= end) {
+    print("${String.fromCharCode(start)}\t");
+    start++;
   }
-  print(name + '\n');
+  print('$name\n');
   print(age);
-  print(city + '\n');
-  print(Quelf + '\n');
+  print('$city\n');
+  print('$quelf\n');
 
   int d = 'fbv'.codeUnitAt(2);
   print(String.fromCharCode(d));
@@ -90,7 +89,9 @@ void main(List<String> args) {
   print(numbers.runtimeType);
 
   var itretor = numbers.iterator;
-  for (; itretor.moveNext();) print(itretor.current);
+  for (; itretor.moveNext();) {
+    print(itretor.current);
+  }
   int sum =
       numbers.fold(1, (previousValue, element) => previousValue * element);
 
@@ -134,7 +135,7 @@ void main(List<String> args) {
   person.update('lastname', (value) => 'Saif', ifAbsent: () => 'Saif');
   print(person);
   person.forEach((key, value) {
-    print("key is ${key} value of key is ${value}");
+    print("key is $key value of key is $value");
   });
 
 //set
@@ -145,7 +146,7 @@ void main(List<String> args) {
   Set<bool> flagsSet = {true, false};
   Set<dynamic> mixedSet = {1, 'two', true};
 
-  print("fruit set is ${fruitsSet}");
+  print("fruit set is $fruitsSet");
   final search = numbersSet.lookup(10);
 
   print(search);
@@ -158,7 +159,7 @@ void main(List<String> args) {
   print(allGroup);
 
   // Creating a Queue
-  Queue<String> queue = new Queue<String>();
+  Queue<String> queue = Queue<String>();
   queue.add('1');
   queue.add('2');
   queue.add('3');
@@ -166,21 +167,21 @@ void main(List<String> args) {
   print("This is Queue Strucure     $queue ");
 
   //enum
-  for (names name in names.values) {
+  for (Names name in Names.values) {
     print(name);
   }
-  final nam1 = names.Ahamed;
+  final nam1 = Names.ahamed;
   switch (nam1) {
-    case names.Ahamed:
+    case Names.ahamed:
       print("This is  the correct case.");
       break;
-    case names.Ali:
+    case Names.ali:
       print("This is not the correct case.");
       break;
-    case names.Sam:
+    case Names.sam:
       print("This is the correct case.");
       break;
-    case names.hassan:
+    case Names.hassan:
       print("This is not the correct case.");
       break;
   }

@@ -1,6 +1,4 @@
-import 'dart:convert';
-import 'dart:ffi';
-import 'dart:io';
+
 
 double add(double x, double y) {
   return x + y;
@@ -19,11 +17,11 @@ dynamic max1(dynamic x, dynamic y) {
 }
 
 void fullName(String firstName, Function() laterName) {
-  print(firstName + " " + laterName());
+  print("$firstName  $laterName()");
 }
 
 void showData(num ID, String firstName, [String? lastName]) {
-  print("ID is ${ID}\t Name is :${firstName}\t liastName   :${lastName}");
+  print("ID is $ID\t Name is :$firstName\t liastName   :$lastName");
 }
 
 void showFullData(

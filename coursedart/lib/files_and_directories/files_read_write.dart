@@ -1,4 +1,5 @@
 import 'dart:convert';
+
 import 'dart:io';
 
 const String filePath = 'F:/DartCourse/coursedart/info_dart.txt';
@@ -13,14 +14,18 @@ void main(List<String> args) async {
       .toList();
 
   try {
-    for (String line in lines) print('$line: ${line.length} characters');
+    for (String line in lines) {
+      print('$line: ${line.length} characters');
+    }
     print('read file succssfully');
   } catch (e) {
     print('Error : $e');
   }
 
   List<String> information = await file.readAsLines();
-  for (String info in information) print(info);
+  for (String info in information) {
+    print(info);
+  }
 
   /************write into file************************** */
   IOSink fileToWrite = File(filePath).openWrite(mode: FileMode.append);
@@ -28,16 +33,41 @@ void main(List<String> args) async {
   fileToWrite.close();
 
   information = await file.readAsLines();
-  for (String info in information) print(info);
+  for (String info in information) {
+    print(info);
+  }
   //or*****************************************
 
-  RandomAccessFile WriteSync =
+  RandomAccessFile writeSync =
       File(filePath).openSync(mode: FileMode.writeOnlyAppend);
-  WriteSync.writeStringSync("hi,This New Sync ");
-  WriteSync.closeSync();
+  writeSync.writeStringSync("hi,This New Sync ");
+  writeSync.closeSync();
   information = await file.readAsLines();
-  for (String info in information) print(info);
+  for (String info in information) {
+    print(info);
+  }
 
   File('NewCreateFile.txt').create();
   File('NewCreateFile.txt').delete();
+
+  // drectories
+
+  Directory directory = Directory("DirectoryCreate");
+  if (!directory.existsSync()) {
+    await directory.create();
+  }
+  if (directory.existsSync()) {
+    print("folder created Ok ${directory.absolute.path}");
+    // await directory.delete();
+  }
+  File newFile = File("${directory.absolute.path}/data.txt");
+  if (!newFile.existsSync()) {
+    await newFile.create(); //create file
+  }
+  newFile.writeAsString("""Hi, How do you do 
+   i have smoething want to tell you about files""");
+
+  final readNewFile = await newFile.readAsLines(encoding: utf8);
+
+  print("file Data is:  $readNewFile");
 }
