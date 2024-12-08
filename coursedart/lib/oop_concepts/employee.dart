@@ -1,30 +1,30 @@
 import 'package:coursedart/oop_concepts/person.dart';
 
 class Employee extends Person {
-  final String emp_dept;
+  final String empDept;
 
-  final double emp_salary;
+  final double empSalary;
 
   Employee(
-      {required this.emp_dept,
-      required this.emp_salary,
+      {required this.empDept,
+      required this.empSalary,
       required String name,
       required int id,
       required int age})
       : super(name, id, age);
 
-  void ShowDetails() {
-    print("Name of the Employee is: ${this.getName}");
-    print("id of the Employee is: ${this.getId}");
-    print("age of the Employee is: ${this.getage}");
+  void _showDetails() {
+    print("Name of the Employee is: $getName");
+    print("id of the Employee is: $getId");
+    print("age of the Employee is: $getage");
 
-    print("Salary of the Employee is: ${this.emp_salary}");
-    print("Dept. of the Employee is: ${emp_dept}");
+    print("Salary of the Employee is: $empSalary");
+    print("Dept. of the Employee is: $empDept");
   }
 }
 
 void main() {
   Employee employee = Employee(
-      emp_dept: "en", emp_salary: 3443.4, name: "Hassan", id: 23455, age: 25);
-  employee.ShowDetails();
+      empDept: "en", empSalary: 3443.4, name: "Hassan", id: 23455, age: 25);
+  employee._showDetails();
 }

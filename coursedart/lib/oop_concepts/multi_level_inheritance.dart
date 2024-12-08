@@ -3,7 +3,7 @@ class Parent {
   Parent(this.p);
 
   void parentInfo() {
-    print("THe parent info is:   ${this.p}");
+    print("THe parent info is:   $p");
   }
 }
 
@@ -11,7 +11,7 @@ class Child1 extends Parent {
   String ch1;
   Child1(String parentInfo, this.ch1) : super(parentInfo);
   void child1Info() {
-    print("THe child1 Info info is:   ${this.ch1}");
+    print("THe child1 Info info is:   $ch1");
   }
 }
 

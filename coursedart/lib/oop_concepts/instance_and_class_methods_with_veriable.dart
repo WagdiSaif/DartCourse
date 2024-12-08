@@ -5,7 +5,7 @@ class Track {
   }
 
   void displayCount() {
-    print("The Count is :  ${count}");
+    print("The Count is :  $count");
   }
 
   // class method for sum  two parameters
