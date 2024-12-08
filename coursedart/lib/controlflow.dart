@@ -1,15 +1,16 @@
 import 'dart:io';
 
-enum names { Ahamed, Ali, Sam, hassan }
+enum Names { ahmed, ali, sam, hassan }
 
 void main() {
 // if ,else if ,else
   print('plz input the number : ');
   int number = int.parse(stdin.readLineSync()!);
-  if (number % 2 == 0)
+  if (number % 2 == 0) {
     print("The user input is Even number is $number");
-  else
+  } else {
     print("The user input is Odd number is $number");
+  }
 
   //********************* ****************if ,else if ,else*****************************************/
   print('plz input the numbers x,y,z : ');
@@ -18,10 +19,11 @@ void main() {
   int z = int.parse(stdin.readLineSync()!);
   if (x >= y && x >= z) {
     print("x Grater than y and z");
-  } else if (y >= x && y >= z)
+  } else if (y >= x && y >= z) {
     print("y Grater than x and z");
-  else
+  } else {
     print("z Grater than y and x");
+  }
 
 /********************************************************************************** */
   double cnum = double.parse(stdin.readLineSync()!);
@@ -35,18 +37,18 @@ void main() {
   }
 
 /******************************switch************************************************** */
-  var nam1 = names.Ahamed;
+  var nam1 = Names.ahmed;
   switch (nam1) {
-    case names.Ahamed:
+    case Names.ahmed:
       print("This is  the correct case.");
       break;
-    case names.Ali:
+    case Names.ali:
       print("This is not the correct case.");
       break;
-    case names.Sam:
+    case Names.sam:
       print("This is the correct case.");
       break;
-    case names.hassan:
+    case Names.hassan:
       print("This is not the correct case.");
       break;
   }
@@ -54,11 +56,11 @@ void main() {
 
   int start = 1;
 
-  String Name = "Wagdi";
+  String name = "Wagdi";
   switch (start) {
     case 1:
       {
-        switch (Name) {
+        switch (name) {
           case 'Wagdi':
             {
               print("I am flutter and dart programer");
