@@ -1,4 +1,6 @@
 
+
+
 double add(double x, double y) {
   return x + y;
 }
@@ -42,6 +44,10 @@ void _privateFunction(){
 (String, int) languageInformation() {
   return (" Dart", 3);
 }
+Future<void> asyncFunction() async {
+  await Future.delayed(Duration(seconds: 2));
+  print("This is an async function");
+}
 
 void main() {
   // print("Enter x values : ");
@@ -77,5 +83,6 @@ void main() {
   _privateFunction();
 
   (String, int) languageInfo = languageInformation();
-  print("Language: ${languageInfo.$1}, Year: ${languageInfo.$2}");
+  print("Language: ${languageInfo.$1}, Year: ${languageInfo.$2}\n");
+  asyncFunction();
 }
