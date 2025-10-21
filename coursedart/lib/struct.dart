@@ -1,7 +1,7 @@
 import 'dart:ffi';
 // import 'package:ffi/ffi.dart';
 
-class Person extends Struct {
+ final class Person extends Struct {
   @Int32()
   external int age;
 

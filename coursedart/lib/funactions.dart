@@ -36,6 +36,13 @@ customDartFunction() {
   //dynamic return
   print("Hi,Welcome to Dart program Language");
 }
+void _privateFunction(){
+  print("This is a private function");
+}
+//Function retrun more than  one value
+(String, int) languageInformation() {
+  return (" Dart", 3);
+}
 
 void main() {
   // print("Enter x values : ");
@@ -68,4 +75,8 @@ void main() {
   {
     int nu = 90;
   }
+  _privateFunction();
+
+  (String, int) languageInfo = languageInformation();
+  print("Language: ${languageInfo.$1}, Year: ${languageInfo.$2}");
 }
