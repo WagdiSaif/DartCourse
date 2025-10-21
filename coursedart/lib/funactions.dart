@@ -69,7 +69,7 @@ void main() {
   }
 
   FunTypedef div = divide;
-  print("The Result of Divid is:   ${div(32, 2)}");
+  print("The Result of Divid is:   ${div(31, 2)}");
 
   {
     int nu = 90;
