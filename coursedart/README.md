@@ -52,7 +52,7 @@ coursedart/
 │
 
 
-## 🎯 Course Content
+##  Course Content
 
 ### Fundamentals
 - Data Types: Variables, constants, and type system
