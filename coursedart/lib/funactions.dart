@@ -1,6 +1,8 @@
 
 
 
+import 'dart:math';
+
 double add(double x, double y) {
   return x + y;
 }
@@ -48,8 +50,11 @@ Future<void> asyncFunction() async {
   await Future.delayed(Duration(seconds: 2));
   print("This is an async function");
 }
-
-void main() {
+void helloFun(){
+  print("*"*50);
+  print("Wellcome to Dart Language");
+}
+Future<void> main() async {
   // print("Enter x values : ");
   // int? x = int.parse(stdin.readLineSync()!);
   // print("Enter y values : ");
@@ -84,5 +89,8 @@ void main() {
 
   (String, int) languageInfo = languageInformation();
   print("Language: ${languageInfo.$1}, Year: ${languageInfo.$2}\n");
-  asyncFunction();
+ await  asyncFunction();
+  
+
+  helloFun.call();
 }
