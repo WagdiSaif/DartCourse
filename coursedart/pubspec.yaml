@@ -16,6 +16,7 @@ dev_dependencies:
   json_serializable: ^6.8.0
   
 dependencies:
-  ffi: ^2.1.0
+  ffi: ^2.1.4
   json_annotation: ^4.9.0
+  path: ^1.9.1
   
