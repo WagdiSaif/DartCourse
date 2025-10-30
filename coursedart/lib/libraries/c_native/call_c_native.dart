@@ -24,7 +24,7 @@ typedef ShowDetailsDartFun = void Function(Pointer<Student>);
 typedef ShowDetailsNativeFun = Void Function(Pointer<Student>);
 void main(List<String> args) {
   var dylib = DynamicLibrary.open(
-    "/coursedart/c_native_code/libnative_student.dylib",
+    " /coursedart/c_native_code/libnative_student.dylib",
   );
   print("*" * 60);
 
@@ -73,6 +73,8 @@ void main(List<String> args) {
         "showStudentDetails",
       );
   showData(s);
-
+//free memory from (Object,Pointers)
   malloc.free(s);
+  calloc.free(student.name);
+  calloc.free(student.level);
 }
