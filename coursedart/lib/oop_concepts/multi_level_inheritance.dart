@@ -58,9 +58,9 @@ void main() {
 
   var human = Human('Wagdi', 25, 'Yemani');
 
-  human.eat(); // Output: Wagdi is eating.
-  human.run(); // Output: Wagdi is running.
-  human.speak(); // Output: Wagdi is speaking.
+  human.eat(); 
+  human.run(); 
+  human.speak(); 
   print('Age: ${human.age}');
   print('Nationality: ${human.nationality}');
 }

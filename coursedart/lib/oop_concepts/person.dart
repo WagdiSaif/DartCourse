@@ -1,6 +1,6 @@
 class Person {
-  //The following private field With Dart start with _
-  final String _name;
+ 
+  final String _name;//private veriable
   final int _id;
   final int _age;
 

@@ -1,20 +1,18 @@
-
 class Customer {
-  // Attributes
-    int customerId;
-   String name;
-   String email;
-   String phoneNumber;
-   String address;
-  // Constructor
+  int customerId;
+  String name;
+  String email;
+  String phoneNumber;
+  String address;
+
   Customer({
+    required String bod,
     required this.customerId,
     required this.name,
     required this.email,
     required this.phoneNumber,
     required this.address,
   });
-
 
   void showCustomerDetails() {
     print("Customer Details:");
@@ -24,6 +22,4 @@ class Customer {
     print("Phone: $phoneNumber");
     print("Address: $address");
   }
-
-  
 }
