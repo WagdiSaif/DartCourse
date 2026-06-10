@@ -17,7 +17,7 @@ class Mammal extends Animal {
 }
 
 class Dog extends Animal {
-  Dog(String name) : super(name);
+  Dog(super.name);
 
   void bark() {
     print("$name is barking");
@@ -57,7 +57,7 @@ class Car extends Vehicle {
 class Bike extends Vehicle {
   int speed;
 
-  Bike(String brand, this.speed) : super(brand);
+  Bike(super.brand, this.speed);
 
   void showSpeed() {
     print('Speed: $speed km/h');

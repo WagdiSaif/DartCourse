@@ -1,6 +1,6 @@
 
 
-enum ShappingStatus { Delivered, Intransit, LabelCreated }
+enum ShappingStatus { delivered, intransit, labelCreated }
 
 class ShippingDetails {
   final String shippingAddress;

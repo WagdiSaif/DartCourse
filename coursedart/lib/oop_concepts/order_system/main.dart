@@ -1,9 +1,9 @@
-import 'package:coursedart/oop_concepts/order_system/inventory/inventories.dart';
-import 'package:coursedart/oop_concepts/order_system/inventory/inventory_item.dart';
-import 'package:coursedart/oop_concepts/order_system/inventory/stock_details.dart';
-
 import 'package:coursedart/oop_concepts/order_system/warehouse/location.dart';
 
+import 'inventory/inventories.dart';
+import 'inventory/inventory_item.dart';
+import 'inventory/stock_details.dart';
+import 'orders/shipping_details.dart';
 import 'products/categories.dart';
 import 'customer.dart';
 import 'products/books/ebooks.dart';
@@ -18,53 +18,57 @@ class OrderSystem {}
 
 void main(List<String> args) {
   //Creaate Store
+
   final store1 = Store(
-    city: 'city',
-    id: 'id',
-    name: 'name',
-    fullAddress: 'fullAddress',
+    city: 'Riyadh',
+    id: '1',
+    name: 'Book-Markting',
+    fullAddress: 'Riyadh-Computer-Street',
     latitude: 21.2322332,
     longitude: 23.12343556,
-    countryCode: '3322',
+    countryCode: '+966',
     loctionType: LoctionType.store,
   );
-
+  //Create Inventory for That Store
   var inventory1 = Inventory(location: store1);
-  inventory1 = Inventory(location: store1);
-  inventory1.countedBy = '';
+
+  //Create  Product Categories
   final category1 = Categories(categoryName: 'Book', categoryID: '12');
-  final productVariant = ProductVariant.addProductVariant(
-    sku: '',
-    color: 'color',
-    weight: 32,
-    size: 3,
-  );
-  productVariant.toString();
+
+  //Create  Product Categories
+
   // Create Product(Book)
   var printedBook = PrintedBook(
-    productVariant: [],
     description: '',
     bookId: '234',
     title: "The Dart Programming Language",
     author: "Author A",
-    price: 29.99,
+    basePrice: 29.99,
     publisher: "Publisher X",
     pageCount: 300,
-
     category: category1,
     productId: '1',
     productName: 'Printed Book',
   );
 
+  final productVariant = ProductVariant(
+    productVariantId: '4WQ',
+    sku: 'book-12',
+    color: 'RED',
+    weight: 32,
+    size: 'x-large',
+    price: 44.3,
+    product: printedBook,
+  );
+
   // printedBook.showBookDetails();
   // printedBook.applyDiscount(50);
   var ebook1 = EBook(
-    productVariant: [],
     description: '',
     bookId: '343',
     title: "Learning Flutter",
     author: "Author B",
-    price: 19.99,
+    basePrice: 19.99,
     fileFormat: "PDF",
     fileSizeMB: 5.0,
     category: category1,
@@ -74,12 +78,11 @@ void main(List<String> args) {
 
   ebook1.showBookDetails();
   var ebook2 = EBook(
-    productVariant: [],
     description: '',
     bookId: '343',
     title: "Learning Flutter",
     author: "Author B",
-    price: 19.99,
+    basePrice: 19.99,
     fileFormat: "PDF",
     fileSizeMB: 5.0,
     category: category1,
@@ -88,12 +91,11 @@ void main(List<String> args) {
   );
   ebook2.showBookDetails();
   var ebook3 = EBook(
-    productVariant: [],
     description: '',
     bookId: '343',
     title: "Learning Flutter",
     author: "Author B",
-    price: 19.99,
+    basePrice: 19.99,
     fileFormat: "PDF",
     fileSizeMB: 5.0,
     category: category1,
@@ -102,8 +104,8 @@ void main(List<String> args) {
   );
 
   final item1 = InventoryItem(
-    quantity: 22,
-    product: ebook3,
+   
+    productVariantId: 'productVariantId',
     skuId: 'Ebook-E-32',
     batchNumber: '32',
     stockDetails: StockDetails(
@@ -119,8 +121,8 @@ void main(List<String> args) {
   // Create Categories and Store
   //*******************Create Inventory Item********************** */
   final item2 = InventoryItem(
-    product: ebook3,
-    quantity: 22,
+    productVariantId: 'productVariantId',
+
     skuId: 'E',
     batchNumber: '3',
     dateTime: DateTime.now(),
@@ -142,7 +144,7 @@ void main(List<String> args) {
   final inventory = Inventory(location: store1);
 
   inventory.addItem([item2, item1]);
-  inventory.updateStock(2, '213', 'E-Book');
+  inventory.updateStock(2, '213', 'book-12');
 
   // category.addBook(printedBook);
   // category.addBook(ebook);
@@ -196,12 +198,13 @@ void main(List<String> args) {
   // // Update
   //
 
-  // Shipping details for order
-  // var shipping = ShippingDetails(
-  //   orderDetails: order2,
-  //   dateTime: DateTime.now(),
-  //   shippingAddress: "123 Main St, City",
-  //   shippingCost: 5.89,
-  // );
+  //Shipping details for order
+  var shipping = ShippingDetails(
+    shappingStatus: ShappingStatus.labelCreated,
+    trackingNumber: '34',
+    carrierName: 'Fast-Order',
+    shippingAddress: "123 Main St, City",
+    shippingCost: 5.89,
+  );
   // shipping.showShippingDetails();
 }

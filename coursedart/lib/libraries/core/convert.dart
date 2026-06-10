@@ -7,12 +7,12 @@ class Myinfo {
 
   Myinfo({required this.name, required this.age, required this.email});
 
-  factory Myinfo.fromJson(Map<String, dynamic> Json) {
-    return Myinfo(name: Json['name'], age: Json['age'], email: Json['email']);
+  factory Myinfo.fromJson(Map<String, dynamic> json) {
+    return Myinfo(name: json['name'], age: json['age'], email: json['email']);
   }
 
   Map<String, dynamic> toJson() {
-    return {'name': this.name, 'age': this.age, 'email': this.email};
+    return {'name': name, 'age': age, 'email': email};
   }
 }
 

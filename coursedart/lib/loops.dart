@@ -19,9 +19,8 @@ do-while loop*/
   for (int numbr in numbers) {
     print(numbr);
   }
-  numbers.forEach((int element) {
-    print(element);
-  });
+ 
+numbers.forEach(print);
 
 /************************************************* */
 

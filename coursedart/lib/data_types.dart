@@ -8,7 +8,7 @@ void main(List<String> args) {
   double y = 40.0;
   String name = 'Wagdi Saif';
 
-  var city = "Yem";
+  var city = "Y";
   var age = 26;
   var num1 = num.parse("3");
   var num2 = num.parse("9.3");
@@ -61,11 +61,14 @@ void main(List<String> args) {
   bool flag = number.every((element) => element > 1);
 
   Iterable<int> iterableNum = [12, 34, 45, 67, 23, 43];
+
+
   iterableNum = number.expand((element) sync* {
     for (var i = 1; i <= element; i++) {
       yield i;
     }
   });
+
 
   var rstl = number.where((element) => element.isOdd);
 

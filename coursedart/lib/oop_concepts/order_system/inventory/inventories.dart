@@ -1,5 +1,3 @@
-import 'dart:js_interop';
-
 import 'package:coursedart/oop_concepts/order_system/transaction/invatory_transaction.dart';
 
 import '../warehouse/location.dart';
@@ -8,7 +6,7 @@ import 'inventory_item.dart';
 //
 enum InventoryStatus { active, counting, closed, frozen }
 
- final class Inventory {
+ class Inventory {
   final Location location;
   DateTime? lastPhysicalCountDate;
   InvatoryTransaction? invatoryTransaction;
@@ -16,12 +14,12 @@ enum InventoryStatus { active, counting, closed, frozen }
   String? countedBy;
   InventoryStatus? inventoryStatus;
 
-   Inventory({
+  Inventory({
     required this.location,
     this.lastPhysicalCountDate,
     this.invatoryTransaction,
     this.items = const [],
-    this.inventoryStatus,
+    this.inventoryStatus=InventoryStatus.active,
     this.countedBy,
   });
 
@@ -56,31 +54,34 @@ enum InventoryStatus { active, counting, closed, frozen }
     items.addAll(item);
   }
 
-  void updateStock(int quantitySold, String categoryID, String productName) {
-   final cv= items.first.stockDetails.available;
-      items[0].runtimeType.toExternalReference;
-   
-    if (items.first.stockDetails.available >= quantitySold) {
-      int soldCount = items.first.stockDetails.available - quantitySold;
-      for (
-        var i = 0;
-        i < (items.length) && (items.first.stockDetails.available > soldCount);
-        i++
-      ) {
-        if (items[i].product.productName == productName) {
-          items.removeAt(i);
+  void updateStock(int quantitySold, String categoryID, String productSku) {
+    try {
+      final itemSold = items.singleWhere((items) => items.skuId == productSku);
 
-          items[i].stockDetails.available -= 1;
-        }
+      if (itemSold.stockDetails.available < quantitySold) {
+        throw ArgumentError('Error Quantity Invalid');
       }
 
-      print("Stock updated. Remaining stock: ${items.length}");
-    } else {
-      print("Not enough stock available!");
+      final indexItem = items.indexOf(itemSold);
+      if (indexItem == -1) throw IndexError.withLength(indexItem, items.length);
+
+      final quantityAvaliable = items[indexItem].stockDetails.available;
+      items[indexItem].stockDetails = items[indexItem].stockDetails.copyWith(
+        available: quantityAvaliable - quantitySold,
+      );
+      items[indexItem].stockDetails.available
+       =
+          quantityAvaliable - quantitySold;
+      print(
+        'Quantity After Sold ${items[indexItem].stockDetails.available}',
+      );
+    } catch (e) {
+      print(e.toString());
     }
   }
 
   void showInventoryProduct() {
-    items.map((pro) => pro.product.showDetails()).toList();
+    items.map((pro) => pro.showItemDetails()).toList();
   }
 }
+

@@ -1,8 +1,10 @@
+
+
 enum LoctionType { warhouse, store, shelf, track, popUpStore }
 
-abstract class Location {
+class Location {
   final String id;
-    final String city;
+  final String city;
   final String name;
   final String fullAddress;
   final double latitude;
@@ -20,4 +22,11 @@ abstract class Location {
     required this.countryCode,
     required this.loctionType,
   });
+
+  @override
+  String toString() {
+ 
+    return 'Id :$id  City: $city Name: $name FullAddress :$fullAddress  Longitude $longitude  Latitude:  $latitude  CountryCode: $countryCode  LoctionType: $loctionType';
+  }
 }
+

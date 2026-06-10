@@ -7,7 +7,7 @@ class Categories {
 
   @override
   String toString() {
-    return 'Category Name is ${this.categoryName} Category ID ${this.categoryID}';
+    return 'Category Name is $categoryName Category ID $categoryID';
   }
 
   void showCategory() {

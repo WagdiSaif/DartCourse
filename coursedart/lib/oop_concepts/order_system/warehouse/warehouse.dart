@@ -1,10 +1,10 @@
 import 'package:coursedart/oop_concepts/order_system/warehouse/location.dart';
 
 class Warehouse extends Location {
+  final double storageCapacity;
 
-    final double storageCapacity;
-
-  Warehouse({required super.city,
+  Warehouse({
+    required super.city,
     required this.storageCapacity,
     required super.id,
     required super.name,

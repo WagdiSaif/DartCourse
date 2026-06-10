@@ -1,20 +1,23 @@
-
+import 'package:coursedart/oop_concepts/order_system/products/product.dart';
 
 class ProductVariant {
-const  ProductVariant._({
+  final String sku;
+  final String productVariantId;
+  final Product product;
+  final String color;
+  final double weight;
+  final double price;
+  final String size;
 
-    required String sku,
-    required String color,
-    required double weight,
-    required double size,
+  const ProductVariant({
+    required this.productVariantId,
+    required this.product,
+    required this.sku,
+    required this.color,
+    required this.weight,
+    required this.price,
+    required this.size,
   });
 
-  static ProductVariant addProductVariant({    required String sku,
-    required String color,
-    required double weight,
-    required double size,}){
-
-
-    return  ProductVariant._(sku: sku, color: color, weight: weight, size: size);
-  }
+  String get productSku => sku;
 }
