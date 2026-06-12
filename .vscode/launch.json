@@ -1,0 +1,32 @@
+{
+    "configurations": [
+        {
+            "name": "C/C++: clang build and debug active file",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "C/C++: clang build active file"
+        },
+        {
+            "name": "Dart (lib/libraries/c_native/call_c_native.dart)",
+            "type": "dart",
+            "request": "launch",
+            "cwd": "coursedart",
+            "program": "lib/libraries/c_native/call_c_native.dart"
+        },
+        {
+            "name": "Dart (lib/libraries/c_native/call_c_native.dart)",
+            "type": "dart",
+            "request": "launch",
+            "cwd": "coursedart",
+            "program": "lib/libraries/c_native/call_c_native.dart"
+        }
+    ],
+    "version": "2.0.0"
+}
